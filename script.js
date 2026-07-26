@@ -19,7 +19,8 @@ function openLetter(){
     let stars = document.querySelectorAll(".stars span");
 
 
-    stars.forEach(star=>{
+
+    stars.forEach(star => {
 
         star.style.animation="none";
 
@@ -31,27 +32,29 @@ function openLetter(){
 
 
 
-    setTimeout(()=>{
+
+
+    setTimeout(function(){
 
 
         loading.style.opacity="0";
 
 
 
-        setTimeout(()=>{
+        setTimeout(function(){
 
 
             loading.style.display="none";
 
 
-            let letter=document.getElementById("letter");
 
+            let letter = document.getElementById("letter");
 
             letter.style.display="block";
 
 
 
-            setTimeout(()=>{
+            setTimeout(function(){
 
 
                 letter.classList.add("show");
@@ -65,7 +68,7 @@ function openLetter(){
 
 
 
-    },4000);
+    },3000);
 
 
 
@@ -74,10 +77,12 @@ function openLetter(){
 
 
 
+
 function goBack(){
 
 
-    let letter=document.getElementById("letter");
+
+    let letter = document.getElementById("letter");
 
 
 
@@ -85,7 +90,7 @@ function goBack(){
 
 
 
-    setTimeout(()=>{
+    setTimeout(function(){
 
 
         letter.style.display="none";
@@ -96,8 +101,7 @@ function goBack(){
         .style.display="block";
 
 
-
-    },1200);
+    },1000);
 
 
 
