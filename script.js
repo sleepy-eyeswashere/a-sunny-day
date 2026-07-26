@@ -1,7 +1,6 @@
 function openLetter(){
 
 
-
     document
     .getElementById("intro")
     .style.display="none";
@@ -20,42 +19,39 @@ function openLetter(){
     let stars = document.querySelectorAll(".stars span");
 
 
-    stars.forEach(star => {
+    stars.forEach(star=>{
 
-        star.style.animation = "none";
+        star.style.animation="none";
 
         star.offsetHeight;
 
-        star.style.animation = null;
+        star.style.animation=null;
 
     });
 
 
 
-
-
-    setTimeout(function(){
+    setTimeout(()=>{
 
 
         loading.style.opacity="0";
 
 
 
-        setTimeout(function(){
+        setTimeout(()=>{
 
 
             loading.style.display="none";
 
 
-
-            let letter = document.getElementById("letter");
+            let letter=document.getElementById("letter");
 
 
             letter.style.display="block";
 
 
 
-            setTimeout(function(){
+            setTimeout(()=>{
 
 
                 letter.classList.add("show");
@@ -78,12 +74,10 @@ function openLetter(){
 
 
 
-
 function goBack(){
 
 
-
-    let letter = document.getElementById("letter");
+    let letter=document.getElementById("letter");
 
 
 
@@ -91,13 +85,10 @@ function goBack(){
 
 
 
-
-    setTimeout(function(){
-
+    setTimeout(()=>{
 
 
         letter.style.display="none";
-
 
 
         document
