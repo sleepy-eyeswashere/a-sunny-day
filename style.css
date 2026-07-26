@@ -16,9 +16,10 @@ body{
     #b8ddf5,
     #d9efff,
     #a8d4f0
+    #a9bed2
     );
 
-    font-family:Georgia, serif;
+    font-family:Georgia, serif, cormorant garamond ;
 
 }
 
@@ -122,6 +123,34 @@ button{
     box-shadow:
     0 20px 50px rgba(40,90,130,.2);
 
+    border:2px solid #b8ccda;
+
+background:#fffdf8;
+
+box-shadow:
+0 15px 50px rgba(100,130,160,.2);
+
+    .letter{
+
+    opacity:0;
+
+    filter:blur(8px);
+
+    transform:translateY(30px);
+
+    transition:1.5s ease;
+
+}
+
+
+.letter.show{
+
+    opacity:1;
+
+    filter:blur(0);
+
+    transform:translateY(0);
+}
 }
 
 
@@ -137,4 +166,191 @@ button{
 
     display:block;
 
+}
+
+/* loading stars */
+
+.loading{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(190,220,240,.45);
+
+    backdrop-filter:blur(8px);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:20;
+
+}
+
+
+.stars{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+
+.stars span{
+
+    font-size:38px;
+
+    color:#9bbfd8;
+
+    animation:fillStar 3s forwards;
+
+}
+
+
+.stars span:nth-child(1){
+    animation-delay:.2s;
+}
+
+.stars span:nth-child(2){
+    animation-delay:.7s;
+}
+
+.stars span:nth-child(3){
+    animation-delay:1.2s;
+}
+
+.stars span:nth-child(4){
+    animation-delay:1.7s;
+}
+
+.stars span:nth-child(5){
+    animation-delay:2.2s;
+}
+
+
+
+@keyframes fillStar{
+
+    0%{
+
+        color:#9bbfd8;
+
+        transform:scale(1);
+
+    }
+
+
+    50%{
+
+        color:#f6d98b;
+
+        transform:scale(1.25);
+
+    }
+
+
+    100%{
+
+        color:#f6d98b;
+
+        transform:scale(1);
+
+    }
+
+.cd-player{
+
+    position:absolute;
+
+    left:40px;
+
+    bottom:40px;
+
+    width:130px;
+
+    height:90px;
+
+    background:#c7d5df;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 10px 25px rgba(70,100,120,.25);
+
+    opacity:.9;
+
+}
+
+
+.cd-top{
+
+    text-align:center;
+
+    font-size:45px;
+
+    padding-top:8px;
+
+}
+
+
+.cd-slot{
+
+    position:absolute;
+
+    bottom:12px;
+
+    left:30px;
+
+    width:70px;
+
+    height:5px;
+
+    background:#8298a8;
+
+    border-radius:10px;
+
+}
+
+
+.cd-button{
+
+    position:absolute;
+
+    right:15px;
+
+    bottom:10px;
+
+    width:12px;
+
+    height:12px;
+
+    background:#8fbad4;
+
+    border-radius:50%;
+
+}
+
+
+.back{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:180px;
+
+    background:transparent;
+
+    border:1px solid #a9c1d1;
+
+    color:#55758a;
+
+    padding:10px 25px;
+
+    border-radius:25px;
+
+}
 }
