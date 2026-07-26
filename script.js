@@ -6,7 +6,17 @@ function openLetter(){
 
     loading.style.display="flex";
     loading.style.opacity="1";
+let stars = document.querySelectorAll(".stars span");
 
+stars.forEach(star => {
+
+    star.style.animation = "none";
+
+    star.offsetHeight;
+
+    star.style.animation = null;
+
+});
 
     setTimeout(function(){
 
