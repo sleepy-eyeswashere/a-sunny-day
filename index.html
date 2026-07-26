@@ -1,165 +1,304 @@
-<!DOCTYPE html>
-<html lang="en">
+body{
 
-<head>
+    margin:0;
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    min-height:100vh;
 
-<title>A Little Letter</title>
+    display:flex;
 
-<link rel="stylesheet" href="style.css">
+    justify-content:center;
 
-</head>
+    align-items:center;
 
+    background:
+    linear-gradient(
+        135deg,
+        #b8ddf5,
+        #d9efff,
+        #a8d4f0,
+        #a9bed2
+    );
 
-<body>
+    font-family: "Cormorant Garamond", Georgia, serif;
 
+}
 
 
-<div class="loading" id="loading">
 
-    <div class="stars">
-        <span>✦</span>
-        <span>✦</span>
-        <span>✦</span>
-        <span>✦</span>
-        <span>✦</span>
-    </div>
+.container{
 
-</div>
+    width:100%;
 
+    display:flex;
 
+    justify-content:center;
 
-<div class="container">
+    align-items:center;
 
+}
 
 
-    <div class="intro" id="intro">
 
+.intro{
 
-        <div class="icon">
+    text-align:center;
 
-            <div class="envelope">
+    background:rgba(255,255,255,.55);
 
-                <div class="paper"></div>
+    padding:40px 60px;
 
-                <div class="small-seal">
-                    ✦
-                </div>
+    border-radius:20px;
 
-            </div>
+    box-shadow:
+    0 15px 40px rgba(60,120,160,.15);
 
-        </div>
+}
 
 
 
-        <h1>
-            A Little Letter
-        </h1>
+.icon{
 
+    font-size:35px;
 
+}
 
-        <p>
-            "the prettiest day"
-        </p>
 
 
+h1{
 
-        <button onclick="openLetter()">
-            open
-        </button>
+    color:#9cb4d2;
 
+    font-weight:normal;
 
-    </div>
+}
 
 
 
+p{
 
-    <div class="letter" id="letter">
+    color:#9cb4d2;
 
+    line-height:1.8;
 
-        <div class="letter-seal">
-            ♡
-        </div>
+}
 
 
 
-        <h2>
-            To My Blueberrypie &lt;3
-        </h2>
+button{
 
+    margin-top:20px;
 
+    padding:10px 35px;
 
-        <div class="subtitle">
-            here with you
-        </div>
+    border-radius:30px;
 
+    border:none;
 
+    background:#7eb9df;
 
-        <div class="letter-text">
+    color:white;
 
-            under the blue sky together.
+    cursor:pointer;
 
-            <br><br>
+    font-size:16px;
 
-            maybe on another night,
-            under the trees,
-            far away from everything,
-            we’d speak quietly—
-            neither about the past nor the future,
-            just about the present,
-            just about being.
+}
 
-            <br><br>
 
-            I was there, beside you,
-            without expectations,
-            without complaints.
 
-            <br><br>
+.letter{
 
-            just with your favorite cake,
-            the candles I placed on it,
-            and a gentle smile.
+    display:none;
 
-            <br><br>
+    width:60%;
 
-            happy birthday my blueberrypie.
+    max-width:650px;
 
-            <br><br>
+    background:#fffdf8;
 
-            I hope this year of yours will be a good one—
-            filled with peace and success.
+    padding:50px;
 
+    border-radius:15px;
 
-        </div>
+    border:2px solid #b8ccda;
 
+    box-shadow:
+    0 15px 50px rgba(100,130,160,.2);
 
+    opacity:0;
 
-        <div class="signature">
-            from your vanilla
-        </div>
+    filter:blur(8px);
 
+    transform:translateY(30px);
 
+    transition:1.5s ease;
 
-        <button class="back" onclick="goBack()">
-            back
-        </button>
+}
 
 
-    </div>
 
+.letter.show{
 
+    display:block;
 
-</div>
+    opacity:1;
 
+    filter:blur(0);
 
+    transform:translateY(0);
 
+}
 
-<script src="script.js"></script>
 
 
-</body>
+.letter h2{
 
-</html>
+    color:#3c6685;
+
+}
+
+
+
+.show{
+
+    display:block;
+
+}
+
+
+
+
+.loading{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(190,220,240,.45);
+
+    backdrop-filter:blur(8px);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:20;
+
+}
+
+
+
+.stars{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+
+.stars span{
+
+    font-size:30px;
+
+    color:#ffee8c;
+
+    animation:fillStar 3s forwards;
+
+}
+
+
+
+.stars span:nth-child(1){
+
+    animation-delay:.2s;
+
+}
+
+
+.stars span:nth-child(2){
+
+    animation-delay:.5s;
+
+}
+
+
+.stars span:nth-child(3){
+
+    animation-delay:.8s;
+
+}
+
+
+.stars span:nth-child(4){
+
+    animation-delay:1.1s;
+
+}
+
+
+.stars span:nth-child(5){
+
+    animation-delay:1.5s;
+
+}
+
+
+
+@keyframes fillStar{
+
+    0%{
+
+        color:#9bbfd8;
+
+        transform:scale(1);
+
+    }
+
+
+    50%{
+
+        color:#f6d98b;
+
+        transform:scale(1.25);
+
+    }
+
+
+    100%{
+
+        color:#f6d98b;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+.back{
+
+    margin-top:35px;
+
+    display:block;
+
+    margin-right:auto;
+
+    background:transparent;
+
+    border:1px solid #a9c1d1;
+
+    color:#55758a;
+
+    padding:10px 28px;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+}
