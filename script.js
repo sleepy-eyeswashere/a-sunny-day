@@ -2,14 +2,13 @@ function openLetter(){
 
     document.querySelector(".intro").style.display="none";
 
-
-    let loading=document.getElementById("loading");
+    let loading = document.getElementById("loading");
 
     loading.style.display="flex";
+    loading.style.opacity="1";
 
 
     setTimeout(function(){
-
 
         loading.style.opacity="0";
 
@@ -19,9 +18,16 @@ function openLetter(){
             loading.style.display="none";
 
 
-            document
-            .getElementById("letter")
-            .classList.add("show");
+            let letter = document.getElementById("letter");
+
+            letter.style.display="block";
+
+
+            setTimeout(function(){
+
+                letter.classList.add("show");
+
+            },100);
 
 
         },800);
@@ -31,17 +37,24 @@ function openLetter(){
 
 }
 
+
+
 function goBack(){
 
-    document
-    .getElementById("letter")
-    .classList.remove("show");
+    let letter = document.getElementById("letter");
 
 
-    setTimeout(()=>{
+    letter.classList.remove("show");
+
+
+    setTimeout(function(){
+
+        letter.style.display="none";
+
 
         document.querySelector(".intro").style.display="block";
 
-    },800);
+
+    },1200);
 
 }
