@@ -1,50 +1,60 @@
-function openLetter() {
+function openLetter(){
 
-    const intro = document.getElementById("intro");
-    const loading = document.getElementById("loading");
-    const letter = document.getElementById("letter");
+    document.querySelector(".intro").style.display="none";
 
-    intro.style.display = "none";
+    let loading = document.getElementById("loading");
 
-    loading.style.display = "flex";
+    loading.style.display="flex";
+    loading.style.opacity="1";
 
-    const stars = document.querySelectorAll(".stars span");
 
-    stars.forEach(star => {
-        star.style.animation = "none";
-        star.offsetWidth;
-        star.style.animation = "";
-    });
+    setTimeout(function(){
 
-    setTimeout(() => {
+        loading.style.opacity="0";
 
-        loading.style.display = "none";
 
-        letter.style.display = "block";
+        setTimeout(function(){
 
-        setTimeout(() => {
-            letter.classList.add("show");
-        }, 50);
+            loading.style.display="none";
 
-    }, 3000);
+
+            let letter = document.getElementById("letter");
+
+            letter.style.display="block";
+
+
+            setTimeout(function(){
+
+                letter.classList.add("show");
+
+            },100);
+
+
+        },800);
+
+
+    },4000);
 
 }
 
 
 
-function goBack() {
+function goBack(){
 
-    const intro = document.getElementById("intro");
-    const letter = document.getElementById("letter");
+    let letter = document.getElementById("letter");
+
 
     letter.classList.remove("show");
 
-    setTimeout(() => {
 
-        letter.style.display = "none";
+    setTimeout(function(){
 
-        intro.style.display = "block";
+        letter.style.display="none";
 
-    }, 800);
+
+        document.querySelector(".intro").style.display="block";
+
+
+    },1200);
 
 }
